@@ -105,10 +105,29 @@ Create permission `system`, add to role `admin`. Assign this role to user `quan.
 @endif
 ```
 
-### Work with site content
+### Work with SSL
+```
+cd /etc/nginx/sites-enabled/
+cp bosan.vn golf.vn
 
-* Accounts 
+```
 
-`php artisan make:migration create_table_accounts --create=accounts`
+Remove `server https` part and run `nginx -t && service nginx reload`.
+
+Go to `https://www.sslforfree.com/create?generate&domains=golf.teko.dev`
+
+Create `.well-known/acme-challenge` directory in `public`
+
+Put the manually verify file there and upload to host.
+
+Using Safari to browser to link with `http` for verify.
+
+Create `golf.crt` by copy `golf.bosan.crt` first and then `cabundle.crt` to below.
+
+Create `golf.key` using `private.key`
+
+Enable `https` part in `golf.vn` and reload Nginx.
+
+## Create post and categories.
 
 
