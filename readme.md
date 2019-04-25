@@ -136,3 +136,11 @@ Enable `https` part in `golf.vn` and reload Nginx.
 
 `https://medium.com/@nshakib/laravel-5-6-framework-and-jwt-json-web-tokens-package-scratch-839b1071c1db`
 
+### Using Model Binding Route, apiResource
+
+`https://laravel.com/docs/5.6/routing#route-model-binding`
+
+`https://blog.pusher.com/build-rest-api-laravel-api-resources/`
+
+`https://laravel.com/docs/5.8/eloquent-resources`
+

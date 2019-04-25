@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\Organization;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Tymon\JWTAuth\Contracts\JWTSubject;
@@ -24,7 +25,8 @@ class User extends Authenticatable implements JWTSubject
         'user_type',
         'organization_id',
         'is_active',
-        'is_admin'
+        'is_admin',
+        'desc'
     ];
 
     /**
@@ -44,6 +46,11 @@ class User extends Authenticatable implements JWTSubject
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function organization()
+    {
+        return $this->belongsTo(Organization::class);
+    }
 
     // Rest omitted for brevity
 

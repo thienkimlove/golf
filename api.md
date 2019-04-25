@@ -11,7 +11,9 @@
 ```textmate
 phone : required,  example format +84903347191
 name  : optional
-email : optional
+email : optional,
+organization_id : optional (choose from the list of organizations)
+desc : optional 
 ```
 
 * Response 
@@ -42,3 +44,39 @@ phone : required,  example format +84903347191
 "expires":360000
 }
 ```
+
+### Get current Logged-in User information
+
+* Link `<API_ENDPOINT>/me?token=xxxxxx`
+* Method `GET`
+
+### Update current User
+
+* Link `<API_ENDPOINT>/update?token=xxxx`
+* Method `POST`
+
+* Post Params
+
+```textmate
+name  : optional
+email : optional,
+organization_id : optional (choose from the list of organizations)
+desc : optional 
+```
+
+## Content Listing API
+
+### User Listing
+
+* Link `<API_ENDPOINT>/users`
+* Link `<API_ENDPOINT>/users/<user_id>`
+
+### Category Listing
+
+* Link `<API_ENDPOINT>/categories`
+* Link `<API_ENDPOINT>/categories/<category_id>`
+
+### Organization Listing
+
+* Link `<API_ENDPOINT>/organizations`
+* Link `<API_ENDPOINT>/organizations/<organization_id>`

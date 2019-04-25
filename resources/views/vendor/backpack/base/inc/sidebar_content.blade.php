@@ -8,10 +8,13 @@
 <!-- Users, Roles Permissions -->
 @role('system')
 <li class="treeview">
-    <a href="#"><i class="fa fa-group"></i> <span>Users, Roles, Permissions</span> <i class="fa fa-angle-left pull-right"></i></a>
+    <a href="#"><i class="fa fa-group"></i> <span>Settings</span> <i class="fa fa-angle-left pull-right"></i></a>
     <ul class="treeview-menu">
         <li><a href="{{ backpack_url('role') }}"><i class="fa fa-group"></i> <span>Roles</span></a></li>
         <li><a href="{{ backpack_url('permission') }}"><i class="fa fa-key"></i> <span>Permissions</span></a></li>
+        <li><a href="{{ backpack_url('province') }}"><i class="fa fa-group"></i> <span>Tỉnh/Thành phố</span></a></li>
+        <li><a href="{{ backpack_url('district') }}"><i class="fa fa-key"></i> <span>Quận/Huyện</span></a></li>
+        <li><a href="{{ backpack_url('organization') }}"><i class="fa fa-key"></i> <span>Organization</span></a></li>
     </ul>
 </li>
 @endrole

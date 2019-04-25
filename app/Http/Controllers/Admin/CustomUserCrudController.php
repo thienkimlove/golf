@@ -48,6 +48,15 @@ class CustomUserCrudController extends UserCrudController
                 'label' => 'IsAdmin',
                 'type' => 'select_from_array',
                 'options' => [1 => 'Yes', 0 => 'No']
+            ],
+            [
+                'label' => 'Organization',
+                'type' => 'select',
+                'name' => 'organization_id',
+                'entity' => 'organization',
+                'attribute' => 'name',
+                'model' => "App\Models\Organization",
+                'searchLogic' => false,
             ]
         ]);
 
@@ -81,6 +90,15 @@ class CustomUserCrudController extends UserCrudController
                 'label' => 'IsAdmin',
                 'type' => 'select_from_array',
                 'options' => [1 => 'Yes', 0 => 'No']
+            ],
+            [
+                'label' => 'Organization',
+                'type' => 'select2',
+                'name' => 'organization_id',
+                'entity' => 'organization',
+                'attribute' => 'name',
+                'model' => "App\Models\Organization",
+                'searchLogic' => false,
             ]
         ]);
 

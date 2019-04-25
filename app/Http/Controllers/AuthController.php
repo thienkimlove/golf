@@ -16,12 +16,17 @@ class AuthController extends Controller
 
                 $email = ($request->input('email'))? $request->input('email') : $phoneNumber.'@golf.vn';
                 $name  =  ($request->input('name'))? $request->input('name') : 'User with phone '.$phoneNumber;
+                $desc  =  ($request->input('desc'))? $request->input('desc') : '';
+                $organization_id  =  ($request->input('organization_id'))? $request->input('organization_id') : null;
+
 
                 $user = User::create([
                     'email'    => $email,
                     'password' => bcrypt('strong_password'),
                     'name' => $name,
                     'phone' =>  $phoneNumber,
+                    'organization_id' => $organization_id,
+                    'desc' => $desc,
                     'is_admin' => false
                 ]);
 
@@ -72,6 +77,39 @@ class AuthController extends Controller
     public function me()
     {
         return response()->json(auth('api')->user());
+    }
+
+    public function updateMe(Request $request)
+    {
+        if ($currentUser = auth('api')->user()) {
+            try {
+
+                if ($request->input('email')) {
+                    $currentUser->email = $request->input('email');
+                }
+                if ($request->input('name')) {
+                    $currentUser->name = $request->input('name');
+                }
+                if ($request->input('desc')) {
+                    $currentUser->desc = $request->input('desc');
+                }
+                if ($request->input('organization_id')) {
+                    $currentUser->organization_id = $request->input('organization_id');
+                }
+
+                $currentUser->save();
+                return response()->json($currentUser);
+            } catch (\Exception $exception) {
+                return response()->json([
+                    'error' => 'Failed to update user!'
+                ]);
+            }
+        }
+
+        return response()->json([
+            'token' => null,
+            'error' => 'No phone param'
+        ]);
     }
 
     public function logout()

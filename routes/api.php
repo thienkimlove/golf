@@ -19,6 +19,9 @@ Route::post('register', 'AuthController@register');
 Route::group(['middleware' => 'jwt.auth'], function () {
     Route::get('logout', 'AuthController@logout');
     Route::get('me', 'AuthController@me');
+    Route::post('updateMe', 'AuthController@updateMe');
     Route::post('refresh', 'AuthController@refresh');
-    Route::apiResource('categories', 'CategoryController');
 });
+Route::apiResource('categories', 'CategoryController');
+Route::apiResource('organizations', 'OrganizationController');
+Route::apiResource('users', 'UserController');
