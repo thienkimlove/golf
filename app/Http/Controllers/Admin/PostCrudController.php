@@ -65,7 +65,7 @@ class PostCrudController extends CrudController
         $this->crud->addFields([
             [
                 'name' => 'name',
-                'label' => 'Tên chuyên mục'
+                'label' => 'Tên bài'
             ],
             [
                 'name' => 'desc',

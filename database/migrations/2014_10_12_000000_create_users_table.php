@@ -21,6 +21,18 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            $table->string('phone')->unique()->default('+84903347191');
+            $table->string('avatar')->nullable();
+            $table->unsignedSmallInteger('user_type')->default(0);
+
+            $table->boolean('is_admin')->default(false);
+
+            $table->boolean('is_active')->default(true);
+
+            $table->unsignedBigInteger('district_id')->nullable();
+            $table->unsignedBigInteger('organization_id')->nullable();
+
         });
     }
 

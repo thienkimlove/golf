@@ -130,4 +130,9 @@ Enable `https` part in `golf.vn` and reload Nginx.
 
 ## Create post and categories.
 
+## Work with JWT
+
+`https://tutsforweb.com/restful-api-in-laravel-56-using-jwt-authentication/`
+
+`https://medium.com/@nshakib/laravel-5-6-framework-and-jwt-json-web-tokens-package-scratch-839b1071c1db`
 
