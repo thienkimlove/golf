@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Models\Category;
+use App\Models\Content;
+use App\Models\Message;
 use App\Models\Organization;
 use App\User;
 use Illuminate\Support\Facades\Route;
@@ -33,6 +35,8 @@ class RouteServiceProvider extends ServiceProvider
         Route::model('user', User::class);
         Route::model('category', Category::class);
         Route::model('organization', Organization::class);
+        Route::model('message', Message::class);
+        Route::model('content', Content::class);
     }
 
     /**

@@ -16,9 +16,9 @@ class CategoryController extends Controller
 
 
     public function show(Category $book)
-    {
-        return new CategoryResource($book);
-    }
+{
+    return new CategoryResource($book);
+}
 
     public function destroy(Category $book)
     {

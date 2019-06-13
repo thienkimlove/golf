@@ -4,6 +4,8 @@
 {{--<li><a href="{{ backpack_url('elfinder') }}"><i class="fa fa-files-o"></i> <span>{{ trans('backpack::crud.file_manager') }}</span></a></li>--}}
 <li><a href="{{ backpack_url('category') }}"><i class="fa fa-cab"></i> <span>Chuyên mục</span></a></li>
 <li><a href="{{ backpack_url('post') }}"><i class="fa fa-podcast"></i> <span>Bài viết</span></a></li>
+<li><a href="{{ backpack_url('content') }}"><i class="fa fa-podcast"></i> <span>Timeline Posts</span></a></li>
+<li><a href="{{ backpack_url('message') }}"><i class="fa fa-podcast"></i> <span>Message</span></a></li>
 
 <!-- Users, Roles Permissions -->
 @role('system')

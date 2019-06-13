@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\ContentResource;
+use App\Http\Resources\MessageResource;
+use App\Models\Content;
+use App\Models\Message;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -77,6 +81,27 @@ class AuthController extends Controller
     public function me()
     {
         return response()->json(auth('api')->user());
+    }
+
+    public function contents()
+    {
+        if ($currentUser = auth('api')->user()) {
+            return ContentResource::collection(
+                Content::where('user_id', $currentUser->id)
+                    ->paginate(25)
+            );
+        }
+    }
+
+    public function messages()
+    {
+        if ($currentUser = auth('api')->user()) {
+            return MessageResource::collection(
+                Message::where('send_user_id', $currentUser->id)
+                    ->orWhere('receiver_user_id', $currentUser->id)
+                    ->paginate(25)
+            );
+        }
     }
 
     public function updateMe(Request $request)
