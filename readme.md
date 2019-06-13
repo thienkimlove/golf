@@ -144,3 +144,13 @@ Enable `https` part in `golf.vn` and reload Nginx.
 
 `https://laravel.com/docs/5.8/eloquent-resources`
 
+`https://blog.pusher.com/build-rest-api-laravel-api-resources/`
+
+`https://scotch.io/tutorials/laravel-eloquent-api-resources`
+
+`https://laravel.com/docs/5.8/eloquent-resources`
+
+`https://www.mynotepaper.com/build-laravel-restful-api-crud-with-authentication-using-passport.html`
+
+`https://medium.com/@dinotedesco/using-laravel-5-5-resources-to-create-your-own-json-api-formatted-api-2c6af5e4d0e8`
+
